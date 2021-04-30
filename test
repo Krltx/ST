@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+
+/* Set height of body and the document to 100% */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial;
+  background-color: white;
+}
+
+/* Style tab links */
+.tablink {
+  background-color: white;
+  color: black;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 50%;
+}
+
+/*.tablink:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19)
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  background-color: #EAEDED;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  display: none;
+  padding: 75px 30px;
+  height: 75%;
+}
+
+#ATS {background-color: #EAEDED;}
+#VT21 {background-color: #EAEDED;}
+
+ .button {
+  background-color: #FF0000; 
+  border: 1px solid #000000;
+  border-radius: 6px;
+  color: white;
+  padding: 4px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.button1 {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.button2:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+</style>
+</head>
+<body>
+<br><br>
+<input type="text" id="txt" />
+	<b>IP Servidor</b>
+	<br><br>
+<input type="button" class ="button button2" id="btnchkats" value="Check ATS" />
+<input type="button" class ="button button2" id="btnchkvt" value="Check VT21" />   
+<script type="text/javascript">
+        var ip = document.getElementById("txt");
+ function chkats () {
+   var ventana = window.open ("http://" + ip.value + ":5000/ats/ping","","width=400,height=200");
+ setTimeout(function(){
+        ventana.close();
+    }, 8000);
+};
+document.getElementById("btnchkats").addEventListener('click', chkats);
+   function chkvt () {
+var ventana = window.open ("http://" + ip.value + ":5000/vt21/ping","","width=400,height=200");
+setTimeout(function(){
+        ventana.close();
+    }, 8000);
+ };
+document.getElementById("btnchkvt").addEventListener('click', chkvt);
+  </script>
+ <br><br>
+<button class="tablink" onclick="openPage('ATS', this, '#EAEDED')"id="defaultOpen"><b>ATS</b></button>
+<button class="tablink" onclick="openPage('VT21', this, '#EAEDED')" ><b>VT21</b></button>
+<div id="ATS" class="tabcontent">
+<p><b>Test Punteado</b></p>
+<input type="button" class ="button button2" id="btn2" value="Mostrar" />
+<input type="button" class ="button button2" id="btn3" value="Iniciar" />
+<input type="button" class ="button button2" id="btn4" value="Cancelar" />
+<br><br>
+<p><b>Test de Palancas</b></p>
+<input type="button" class ="button button2" id="btn5" value="Mostrar" />
+<input type="button" class ="button button2" id="btn6" value="Iniciar" />
+<input type="button" class ="button button2" id="btn7" value="Cancelar" />
+<br><br>
+<p><b>Reactimetria</b></p>
+<input type="button" class ="button button2" id="btn8" value="Mostrar" />
+<input type="button" class ="button button2" id="btn9" value="Iniciar" />
+<input type="button" class ="button button2" id="btn10" value="Cancelar" />
+    <script type="text/javascript">
+function showpun () {
+ var ventana = window.open ("http://" + ip.value + ":5000/ats/show_pun","","width=400,height=200");
+  setTimeout(function(){
+        ventana.close();
+    }, 1500);
+};
+document.getElementById("btn2").addEventListener('click', showpun);       
+function testpun () {
+  var ventana = window.open ("http://" + ip.value + ":5000/ats/test_pun","","width=400,height=200");
+  setTimeout(function(){
+        ventana.close();
+    }, 1500);
+};
+document.getElementById("btn3").addEventListener('click', testpun);
+function stoppun () {
+  var ventana = window.open ("http://" + ip.value + ":5000/ats/stop_pun","","width=400,height=200");
+  setTimeout(function(){
+        ventana.close();
+    }, 1500);
+};
+document.getElementById("btn4").addEventListener('click', stoppun);
+function showpal () {
+  var ventana = window.open ("http://" + ip.value + ":5000/ats/show_palancas","","width=400,height=200");
+  setTimeout(function(){
+        ventana.close();
+    }, 1500);
+};
+document.getElementById("btn5").addEventListener('click', showpal);
+function testpal () {
+  var ventana = window.open ("http://" + ip.value + ":5000/ats/test_palancas","","width=400,height=200");
+  setTimeout(function(){
+        ventana.close();
+    }, 1500);
+};
+document.getElementById("btn6").addEventListener('click', testpal);       
+function stoppal () {
+  var ventana = window.open ("http://" + ip.value + ":5000/ats/stop_palancas","","width=400,height=200");
+  setTimeout(function(){
+        ventana.close();
+    }, 1500);
+};
+document.getElementById("btn7").addEventListener('click', stoppal);
+function showreact () { 
+  var ventana = window.open ("http://" + ip.value + ":5000/ats/show_react","","width=400,height=200");
+  setTimeout(function(){
+        ventana.close();
+    }, 1500);
+};
+document.getElementById("btn8").addEventListener('click', showreact);
+function testreact () {
+  var ventana = window.open ("http://" + ip.value + ":5000/ats/test_react","","width=400,height=200");
+  setTimeout(function(){
+        ventana.close();
+    }, 1500);
+};
+document.getElementById("btn9").addEventListener('click', testreact);
+function stopreact () {
+  var ventana = window.open ("http://" + ip.value + ":5000/ats/stop_react","","width=400,height=200");
+  setTimeout(function(){
+        ventana.close();
+    }, 1500);
+};
+document.getElementById("btn10").addEventListener('click', stopreact);
+    </script>
+</div>
+<div id="VT21" class="tabcontent">
+ <p>Agudeza Visual
+   <input type="button" class ="button button2" id="btn11" value="Izquierdo" />
+   <input type="button" class ="button button2" id="btn12" value="binocular" />
+   <input type="button" class ="button button2" id="btn13" value="derecho" />
+   </p>
+ <p>Visión de Colores
+     &nbsp;
+   <input type="button" class ="button button2" id="btn14" value="Ver" /></p>
+ <p>Profundidad Visual 
+   <input type="button" class ="button button2" id="btn15" value="Ver" /> </p>
+ <p>Foria Visual 
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;          
+   <input type="button" class ="button button2" id="btn16" value="Ver" /> </p>
+ <p>Visión Nocturna
+     &nbsp;&nbsp;&nbsp;&nbsp;
+   <input type="button" class ="button button2" id="btn17" value="Ver" /> </p> 
+ <p>Encandilamiento
+     &nbsp;&nbsp;&nbsp;
+   <input type="button" class ="button button2" id="btn18" value="Ver" /> </p>
+ <p>Recupreación
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <input type="button" class ="button button2" id="btn19" value="Ver" /> </p> 
+ <p>Perimetria</p>
+ <p>Izquierda  <input type="button" class ="button button2" id="btn20" value="85°"/>
+               <input type="button" class ="button button2" id="btn21" value="70°"/> 
+               <input type="button" class ="button button2" id="btn22" value="55°"/>
+ </p>
+ <p>Nasal &nbsp; <input type="button" class ="button button2" id="btn26" value="Left"/>                                                             <input type="button" class ="button button2" id="btn28" value="Up"/>
+                 <input type="button" class ="button button2" id="btn29" value="Down"/>
+                 <input type="button" class ="button button2" id="btn27" value="Right"/>                 
+ </p>
+ <p>Derecha &nbsp; <input type="button" class ="button button2" id="btn23" value="85°"/>                                                             <input type="button" class ="button button2" id="btn24" value="70°"/>
+                   <input type="button" class ="button button2" id="btn25" value="55°"/>
+                   <input type="button" class ="button button2" id="btn42" value="Apagar led"/>                   
+ </p>
+ <p>Audiometria</p>
+ <p>40 Db</p>
+ <p>Derecha &nbsp; <input type="button" class ="button button2" id="btn30" value="250 Hz"/>                                              <input type="button" class ="button button2" id="btn31" value="500 Hz"/>
+                   <input type="button" class ="button button2" id="btn32" value="1K Hz"/>
+ </p>
+ <p>Izquierda &nbsp; <input type="button" class ="button button2" id="btn33" value="250 Hz"/>                                              <input type="button" class ="button button2" id="btn34" value="500 Hz"/>
+                     <input type="button" class ="button button2" id="btn35" value="1K Hz"/>
+ </p> 
+ <p>80 Db</p>
+ <p>Derecha &nbsp; <input type="button" class ="button button2" id="btn36" value="250 Hz"/>                                              <input type="button" class ="button button2" id="btn37" value="500 Hz"/>
+                   <input type="button" class ="button button2" id="btn38" value="1K Hz"/>
+ </p>
+ <p>Izquierda &nbsp; <input type="button" class ="button button2" id="btn39" value="250 Hz"/>                                              <input type="button" class ="button button2" id="btn40" value="500 Hz"/>
+                     <input type="button" class ="button button2" id="btn41" value="1K Hz"/>
+ </p>  
+<script type="text/javascript">
+function agudezaiz () { 
+  var ventana = window.open ("http://" + ip.value + ":5000/vt21/visual_acuity/right","","width=400,height=200");
+  setTimeout(function(){
+        ventana.close();
+    }, 1500);
+};
+document.getElementById("btn11").addEventListener('click', agudezaiz);
+function agudezabi () {
+  var ventana = window.open ("http://" + ip.value + ":5000/vt21/visual_acuity/both","","width=400,height=200");
+  setTimeout(function(){
+        ventana.close();
+    }, 1500);
+};
+document.getElementById("btn12").addEventListener('click', agudezabi);
+function agudezader () {
+  var ventana = window.open ("http://" + ip.value + ":5000/vt21/visual_acuity/left","","width=400,height=200");
+  setTimeout(function(){
+        ventana.close();
+    }, 1500);
+};
+document.getElementById("btn13").addEventListener('click', agudezader);
+function colores () {
+  var ventana = window.open ("http://" + ip.value + ":5000/vt21/color_discrimination/both","","width=400,height=200");
+  setTimeout(function(){
+        ventana.close();
+    }, 1500);
+};
+document.getElementById("btn14").addEventListener('click', colores);
+function profundidad () {
+  var ventana = window.open ("http://" + ip.value + ":5000/vt21/vision_depth","","width=400,height=200");
+  setTimeout(function(){
+        ventana.close();
+    }, 1500);
+};
+document.getElementById("btn15").addEventListener('click', profundidad);
+function foria () {
+  var ventana = window.open ("http://" + ip.value + ":5000/vt21/foria","","width=400,height=200");
+  setTimeout(function(){
+        ventana.close();
+    }, 1500);
+};
+document.getElementById("btn16").addEventListener('click', foria);
+function nocturna () {
+  var ventana = window.open ("http://" + ip.value + ":5000/vt21/night_vision","","width=400,height=200");
+  setTimeout(function(){
+        ventana.close();
+    }, 1500);
+};
+document.getElementById("btn17").addEventListener('click', nocturna);
+function encandila () {
+  var ventana = window.open ("http://" + ip.value + ":5000/vt21/dazzling","","width=400,height=200");
+  setTimeout(function(){
+        ventana.close();
+    }, 1500);
+};
+document.getElementById("btn18").addEventListener('click', encandila);
+function recup () {
+  var ventana = window.open ("http://" + ip.value + ":5000/vt21/dazzling_recuperation","","width=400,height=200");
+  setTimeout(function(){
+        ventana.close();
+    }, 1500);
+};
+document.getElementById("btn19").addEventListener('click', recup);
+function i85 () {
+  var ventana = window.open ("http://" + ip.value + ":5000/vt21/perimetry_led/85L/on","","width=400,height=200");
+  setTimeout(function(){
+        ventana.close();
+    }, 1500);
+};
+document.getElementById("btn20").addEventListener('click', i85);
+function i70 () {
+  var ventana = window.open ("http://" + ip.value + ":5000/vt21/perimetry_led/70L/on","","width=400,height=200");
+  setTimeout(function(){
+        ventana.close();
+    }, 1500);
+};
+document.getElementById("btn21").addEventListener('click', i70);
+function i55 () {
+  var ventana = window.open ("http://" + ip.value + ":5000/vt21/perimetry_led/55L/on","","width=400,height=200");
+  setTimeout(function(){
+        ventana.close();
+    }, 1500);
+};
+document.getElementById("btn22").addEventListener('click', i55);
+function nasali () {
+  var ventana = window.open ("http://" + ip.value + ":5000/vt21/perimetry_led/left/on","","width=400,height=200");
+  setTimeout(function(){
+        ventana.close();
+    }, 1500);
+};
+document.getElementById("btn26").addEventListener('click', nasali);
+function nasalup () {
+  var ventana = window.open ("http://" + ip.value + ":5000/vt21/perimetry_led/up/on","","width=400,height=200");
+  setTimeout(function(){
+        ventana.close();
+    }, 1500);
+};
+document.getElementById("btn28").addEventListener('click', nasalup);
+function nasaldown () {
+  var ventana = window.open ("http://" + ip.value + ":5000/vt21/perimetry_led/down/on","","width=400,height=200");
+  setTimeout(function(){
+        ventana.close();
+    }, 1500);
+};
+document.getElementById("btn29").addEventListener('click', nasaldown);
+function nasald () {
+  var ventana = window.open ("http://" + ip.value + ":5000/vt21/perimetry_led/right/on","","width=400,height=200");
+  setTimeout(function(){
+        ventana.close();
+    }, 1500);
+};
+document.getElementById("btn27").addEventListener('click', nasald);
+function d85 () {
+  var ventana = window.open ("http://" + ip.value + ":5000/vt21/perimetry_led/85R/on","","width=400,height=200");
+  setTimeout(function(){
+        ventana.close();
+    }, 1500);
+};
+document.getElementById("btn23").addEventListener('click', d85);
+function d70 () {
+  var ventana = window.open ("http://" + ip.value + ":5000/vt21/perimetry_led/70R/on","","width=400,height=200");
+  setTimeout(function(){
+        ventana.close();
+    }, 1500);
+};
+document.getElementById("btn24").addEventListener('click', d70);
+function d55 () {
+  var ventana = window.open ("http://" + ip.value + ":5000/vt21/perimetry_led/55R/on","","width=400,height=200");
+  setTimeout(function(){
+        ventana.close();
+    }, 1500);
+};
+document.getElementById("btn25").addEventListener('click', d55);
+function ledoff () {
+  var ventana = window.open ("http://" + ip.value + ":5000/vt21/perimetry_led/all/off","","width=400,height=200");
+  setTimeout(function(){
+        ventana.close();
+    }, 1500);
+};
+document.getElementById("btn42").addEventListener('click', ledoff);
+function d250 () {
+  var ventana = window.open ("http://" + ip.value + ":5000/vt21/audiometry/right/f250/v8","","width=400,height=200");
+  setTimeout(function(){
+        ventana.close();
+    }, 1500);
+};
+document.getElementById("btn30").addEventListener('click', d250);
+function d500 () {
+  var ventana = window.open ("http://" + ip.value + ":5000/vt21/audiometry/right/f500/v8","","width=400,height=200");
+  setTimeout(function(){
+        ventana.close();
+    }, 1500);
+};
+document.getElementById("btn31").addEventListener('click', d500);
+function d1k () {
+  var ventana = window.open ("http://" + ip.value + ":5000/vt21/audiometry/right/f1k/v8","","width=400,height=200");
+  setTimeout(function(){
+        ventana.close();
+    }, 1500);
+};
+document.getElementById("btn32").addEventListener('click', d1k);
+function i250 () {
+  var ventana = window.open ("http://" + ip.value + ":5000/vt21/audiometry/left/f250/v8","","width=400,height=200");
+  setTimeout(function(){
+        ventana.close();
+    }, 1500);
+};
+document.getElementById("btn33").addEventListener('click', i250);
+function i500 () {
+  var ventana = window.open ("http://" + ip.value + ":5000/vt21/audiometry/left/f500/v8","","width=400,height=200");
+  setTimeout(function(){
+        ventana.close();
+    }, 1500);
+};
+document.getElementById("btn34").addEventListener('click', i500);
+function i1k () {
+  var ventana = window.open ("http://" + ip.value + ":5000/vt21/audiometry/left/f1k/v8","","width=400,height=200");
+  setTimeout(function(){
+        ventana.close();
+    }, 1500);
+};
+document.getElementById("btn35").addEventListener('click', i1k);
+function d250v16 () {
+  var ventana = window.open ("http://" + ip.value + ":5000/vt21/audiometry/right/f250/v16","","width=400,height=200");
+  setTimeout(function(){
+        ventana.close();
+    }, 1500);
+};
+document.getElementById("btn36").addEventListener('click', d250v16);
+function d500v16 () {
+  var ventana = window.open ("http://" + ip.value + ":5000/vt21/audiometry/right/f500/v16","","width=400,height=200");
+  setTimeout(function(){
+        ventana.close();
+    }, 1500);
+};
+document.getElementById("btn37").addEventListener('click', d500v16);
+function d1kv16 () {
+  var ventana = window.open ("http://" + ip.value + ":5000/vt21/audiometry/right/f1k/v16","","width=400,height=200");
+  setTimeout(function(){
+        ventana.close();
+    }, 1500);
+};
+document.getElementById("btn38").addEventListener('click', d1kv16);
+function i250v16 () {
+  var ventana = window.open ("http://" + ip.value + ":5000/vt21/audiometry/left/f250/v16","","width=400,height=200");
+  setTimeout(function(){
+        ventana.close();
+    }, 1500);
+};
+document.getElementById("btn39").addEventListener('click', i250v16);
+function i500v16 () {
+  var ventana = window.open ("http://" + ip.value + ":5000/vt21/audiometry/left/f500/v16","","width=400,height=200");
+  setTimeout(function(){
+        ventana.close();
+    }, 1500);
+};
+document.getElementById("btn40").addEventListener('click', i500v16);
+function i1kv16 () {
+  var ventana = window.open ("http://" + ip.value + ":5000/vt21/audiometry/left/f1k/v16","","width=400,height=200");
+  setTimeout(function(){
+        ventana.close();
+    }, 1500);
+};
+document.getElementById("btn41").addEventListener('click', i1kv16);
+</script>
+</div>
+<script>
+function openPage(pageName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+   
+</body>
+</html> 
