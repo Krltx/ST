@@ -1,4 +1,39 @@
-@Instalador Petrinovic SPI Software Petrinovic Intregrate
-https://drive.google.com/drive/folders/16HUQWiFuGad79hbOvmW8gJBifC0JjkVb?usp=drive_link
-ATS LITE - SQL 2008 ESP - WIN10
-https://drive.google.com/drive/folders/18E4vE2SHY1kEDolXAwxpyJTKANa5wCKZ?usp=drive_link
+----------SOFTWARE ATS LITE----------------
+
+SetupATSLite 8.98
+https://drive.google.com/file/d/1Ut5C2A0IvaKZ5tZFuuEddYNO14PREngR/view?usp=drive_link
+
+SetupATSLite 8.59
+https://drive.google.com/file/d/18Kvgnu8sD9RTTd5qj9PBpezjj-bZ0wrD/view?usp=drive_link
+
+SetupATSLite 8.71
+https://drive.google.com/file/d/18M700Ur8eIfskMb1k3_P7RxJfTDptGRR/view?usp=drive_link
+
+ -------INSTALADORES SPI Y BASE DE DATOS--------
+
+Setup_DB_SPI-EN
+https://drive.google.com/file/d/1etCM3u4LHHaaFzVCAsJwKhpaA2vWYgBp/view?usp=drive_link
+
+Petrinovic SP Installer v08.25.1
+https://drive.google.com/drive/folders/181TM3IcTtDEYEhq3IezxwsADsHg6OgyZ?usp=drive_link
+
+SPI-08-05_001 (ACTUALIZACION 08/05/2026)
+https://drive.google.com/file/d/1AdYNpMxQEPt4Jvpp58D6wT6pDs_FvaG7/view?usp=drive_link
+
+-------Agregar en Petrinovic.ini (ATS 1 y Lite)--------
+
+[Extras]
+FuenteEx=Segoe UI
+ColorFondoEx=&H00f0f3fa&
+ValidaEquipo=0
+token_url_pos=https://conaset-sgl-proveedores-api-user-pool-prod.auth.sa-east-1.amazoncognito.com/oauth2/token
+client_id_pos=4vf8meksqo1gugbkctiajdi44q
+client_secret_pos=53l77ptk4rui22mu3gr3f7f60nkslhncdb5u8654bf10u5vgv5e
+scope_pos=conasetSglApiProveedoresResourceServerProd/examinacionMedica
+solicitudes_url=https://d3te95k279wld8.cloudfront.net/solicitudes
+examinacion_medica_url=https://d3te95k279wld8.cloudfront.net/examinacion-medica
+env=PROD
+Soporte=No
+sendDataSgl=Si
+
+------------------------------------------------------------------
